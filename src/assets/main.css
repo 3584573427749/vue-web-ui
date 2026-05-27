@@ -29,23 +29,30 @@ body {
     align-items: center;
     gap: 0.75rem;
 
-    height: 3rem;
-    padding: 0 1rem;
+    height: 4rem;
+    padding: 0 1.5rem;
 
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);
 }
 
-.app-header__menu {
+.app-header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.app-header__link {
     background: none;
     border: none;
-    padding: 0;
+    padding: 0.4rem 0.6rem;
 
-    font-size: 1.25rem;
-    line-height: 1;
     color: var(--color-text);
-
     cursor: pointer;
+}
+
+.app-header__link:hover,
+.app-header__link:focus-visible {
+    color: var(--color-primary);
 }
 
 .app-header__menu:hover,
@@ -80,6 +87,34 @@ body {
 .app-main {
     flex: 1;
     background-color: var(--color-background);
+
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.app-main::before {
+    content: "";
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url('@/assets/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+
+    opacity: 0.2; /* 80% transparent */
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-main > * {
+    position: relative;
+    z-index: 1;
 }
 
 .app-footer {
