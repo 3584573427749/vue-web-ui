@@ -10,10 +10,6 @@ export default defineConfig({
         __APP_VERSION__: JSON.stringify(version)
     },
     plugins: [
-        vue(),
-        VitePWA({
-            registerType: 'autoUpdate',
-            manifest: false
-        })
+        vue()
     ]
 })
